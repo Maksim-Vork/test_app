@@ -142,7 +142,7 @@ class ProfileScreen extends StatelessWidget {
                         },
                       ),
                       const SizedBox(height: 24),
-                      // Оставляем Reset Favorites как есть
+
                       const _ResetFavoritesToggle(),
                     ],
                   ),

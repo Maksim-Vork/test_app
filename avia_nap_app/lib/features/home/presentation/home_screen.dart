@@ -2,6 +2,7 @@ import 'package:avia_nap_app/features/BreathingPractices/presentation/breathing_
 import 'package:avia_nap_app/features/GuidedRelaxtion/presentation/guided_relaxtion_screen.dart';
 import 'package:avia_nap_app/features/SoothingSounds/presentation/soothing_sounds_screen.dart';
 import 'package:avia_nap_app/features/TipsForBetter/presentation/tips_for_better.dart';
+import 'package:avia_nap_app/features/home/presentation/widgets/home_cart.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -43,7 +44,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 24),
-                  _buildCard(
+                  buildCard(
                     context,
                     title: 'Breathing Practices',
                     subtitle: 'Gentle breathing exercises to help you relax',
@@ -55,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                   ),
                   const SizedBox(height: 8),
-                  _buildCard(
+                  buildCard(
                     context,
                     title: 'Soothing Sounds',
                     subtitle:
@@ -70,7 +71,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                   ),
                   const SizedBox(height: 8),
-                  _buildCard(
+                  buildCard(
                     context,
                     title: 'Guided Relaxation',
                     subtitle: 'Short meditative journeys for body and mind',
@@ -84,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                   ),
                   const SizedBox(height: 8),
-                  _buildCard(
+                  buildCard(
                     context,
                     title: 'Tips for Better In-Flight Sleep',
                     subtitle: 'Текст текст текст текст текст текст текст ',
@@ -98,65 +99,6 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildCard(
-    BuildContext context, {
-    required String title,
-    required String subtitle,
-    required String iconPath,
-    required VoidCallback onTap,
-  }) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(28),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    width: 48,
-                    height: 48,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFE5E7EB),
-                    ),
-                    child: Image.asset(iconPath),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontFamily: 'DMSans',
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF25228D),
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                subtitle,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontFamily: 'DMSans',
-                  color: Color(0xB225228D),
-                ),
-              ),
-            ],
           ),
         ),
       ),
