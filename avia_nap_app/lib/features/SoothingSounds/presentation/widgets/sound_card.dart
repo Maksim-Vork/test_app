@@ -1,3 +1,4 @@
+import 'package:avia_nap_app/features/SoothingSounds/presentation/bloc/soothing_sound_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../profile/presentation/bloc/sound_bloc.dart';
@@ -23,8 +24,10 @@ class SoundCard extends StatelessWidget {
             soundState is SoundLoaded ? soundState.isSoundOn : false;
 
         return BlocBuilder<SoothingSoundBloc, SoothingSoundState>(
-          builder: (context, soundState) {
-            final isPlaying = soundState is SoothingSoundPlaying;
+          builder: (context, soothingState) {
+            final isPlaying =
+                soothingState is SoothingSoundPlaying &&
+                soothingState.assetPath == assetPath;
 
             return GestureDetector(
               onTap: () {

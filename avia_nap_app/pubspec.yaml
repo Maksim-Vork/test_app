@@ -34,7 +34,7 @@ dependencies:
   device_preview_plus: ^2.2.7
   responsive_sizer: ^3.1.1
   flutter_bloc: ^9.1.1
-  audioplayers: ^6.3.0
+  audioplayers: 5.2.1
   
 
   # The following adds the Cupertino Icons font to your application.
